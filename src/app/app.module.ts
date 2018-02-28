@@ -12,7 +12,7 @@ import { UserService } from './user.service'
 
 const appRoutes:Routes = [
   {
-    path: '',
+    path: '*/',
     component: LoginFormComponent
   },
   {
