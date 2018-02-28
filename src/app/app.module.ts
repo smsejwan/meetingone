@@ -15,16 +15,21 @@ const appRoutes:Routes = [
   path:'meetingone',
   pathMatch:'prefix',
   children:[
-  {
-    path: '',
-    component: LoginFormComponent
-  },
-  {
-    path: 'dashboard',
-    canActivate: [AuthguardGuard],
-    component: DashboardComponent
-  }
-  ]
+    {
+    path:'meetingone',
+    pathMatch:'prefix',
+    children:[
+    {
+      path: '',
+      component: LoginFormComponent
+    },
+    {
+      path: 'dashboard',
+      canActivate: [AuthguardGuard],
+      component: DashboardComponent
+    }
+    ]
+}]
 },
   {
     path: '',
