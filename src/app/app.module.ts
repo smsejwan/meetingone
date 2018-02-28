@@ -11,6 +11,21 @@ import { AuthguardGuard } from './authguard.guard';
 import { UserService } from './user.service'
 
 const appRoutes:Routes = [
+{
+  path:'meetingone',
+  pathMatch:'prefix',
+  children:[
+  {
+    path: '',
+    component: LoginFormComponent
+  },
+  {
+    path: 'dashboard',
+    canActivate: [AuthguardGuard],
+    component: DashboardComponent
+  }
+  ]
+},
   {
     path: '',
     component: LoginFormComponent
